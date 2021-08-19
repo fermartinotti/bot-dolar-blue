@@ -1,6 +1,6 @@
-import { request } from 'https';
+const https = require('https');
 
-function obtenerPrecioDolarBlue(){
+async function obtenerPrecioDolarBlue(){
     const options = {
         hostname: 'api-dolar-argentina.herokuapp.com',
         port:443,
@@ -10,12 +10,12 @@ function obtenerPrecioDolarBlue(){
           'Content-Type': 'application/json',
         }
     }
-    
-    const req = request(options, res => {        
+    return new Promise((resolve) =>{
+    const req = https.request(options, res => {        
         res.on('data', d => {
             var reqBody = d.toString();
             reqBody = JSON.parse(reqBody);
-            return reqBody.venta;
+            resolve(reqBody.venta);
         })
     })
       
@@ -24,11 +24,7 @@ function obtenerPrecioDolarBlue(){
     })
 
     req.end();
-
+    });
 }
 
-
-export function ping(){
-    console.log("ping");
-}
-
+module.exports = { obtenerPrecioDolarBlue };

@@ -1,8 +1,9 @@
-
 const config = require('dotenv').config();
 const https = require('https');
-var CronJob = require('cron').CronJob;
+const CronJob = require('cron').CronJob;
 const Discord = require('discord.js');
+const precioService = require('./precioService');
+
 const client = new Discord.Client();
 const prefix = process.env.PREFIX;
 const token = process.env.TOKEN;
@@ -21,7 +22,6 @@ client.once('ready', () => {
     job.start();
 });
 
-
 client.on("message", function(message) {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
@@ -38,34 +38,7 @@ client.on("message", function(message) {
 
 client.login(token);
 
-async function obtenerPrecioDolarBlue(){
-    const options = {
-        hostname: 'api-dolar-argentina.herokuapp.com',
-        port:443,
-        path: '/api/dolarblue',
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        }
-    }
-    return new Promise((resolve) =>{
-    const req = https.request(options, res => {        
-        res.on('data', d => {
-            var reqBody = d.toString();
-            reqBody = JSON.parse(reqBody);
-            resolve(reqBody.venta);
-        })
-    })
-      
-    req.on('error', error => {
-        console.error(error);
-    })
-
-    req.end();
-    });
-}
-
 async function actualizarPrecioEnEstado(){
-    const precio= await obtenerPrecioDolarBlue();
+    const precio= await precioService.obtenerPrecioDolarBlue();
     client.user.setActivity(`Precio: ${precio}`, {type: 'WATCHING'});
 }
