@@ -1,0 +1,24 @@
+{
+  "name": "bot-dolar-blue",
+  "version": "1.0.0",
+  "description": "Bot para Discord encargado de informar el precio del dolar y todas sus variantes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fermartinotti/bot-dolar-blue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fermartinotti/bot-dolar-blue/issues"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
+  },
+  "homepage": "https://github.com/fermartinotti/bot-dolar-blue#readme"
+}
