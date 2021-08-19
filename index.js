@@ -11,7 +11,7 @@ var commandBody;
 var args;
 var command;
 
-var job = new CronJob('*/10 * * * *', function() {
+var job = new CronJob('0 * * * *', function() {
     actualizarPrecioEnEstado();
   });
 
