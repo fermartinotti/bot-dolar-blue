@@ -6,6 +6,7 @@ El Bot va a actualizar su estado con el precio actual del Dolar Blue
 ![bot screenshot](https://github.com/fermartinotti/bot-dolar-blue/blob/main/assets/bot.PNG)
 
 Podes tambien preguntarselo
+
 ![bot_precio](https://github.com/fermartinotti/bot-dolar-blue/blob/main/assets/subio.png)
 
 ## Probalo! Sumalo a tu canal
