@@ -53,13 +53,12 @@ async function enviarCotizaciones(message){
 
     //creo un embed y lo envio
     const embed = new Discord.MessageEmbed()
-    //.setColor()
-    .setTitle("Cotizaciones")
-    .setAuthor('El arbolito de la calle florida 💵', 'https://github.com/fermartinotti/bot-dolar-blue/blob/main/assets/dolar-blue-5jpg.jpg')
-    .setDescription("Como suben los crocantes!")
-    .setThumbnail("https://github.com/fermartinotti/bot-dolar-blue/blob/main/assets/dolar-logo.png")
+    .setColor('#0075e3')
+    .setTitle("Cotizaciones 💸")
+    .setAuthor('El arbolito de la calle florida 🌲 ', 'https://raw.githubusercontent.com/fermartinotti/bot-dolar-blue/main/assets/dolar-blue.jpg')
+    .setDescription("Como suben los crocantes! 🤑")
+    .setThumbnail("https://github.com/fermartinotti/bot-dolar-blue/blob/main/assets/dolar-logo.png?raw=true")
     .addFields(
-      //{ name: '\u200B', value: '\u200B' },
       { name: 'Dolar blue ', value: `Compra: $${dolarBlue.compra} Venta: $${dolarBlue.venta}`, inline: true },
       { name: `Dolar Oficial `, value: `Compra: $${dolarOficial.compra} Venta: $${dolarOficial.venta}`, inline: true },
       { name: `Dolar Turista `, value: `Compra: $${dolarTurista.compra} Venta: $${dolarTurista.venta}`, inline: true },
