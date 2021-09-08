@@ -15,7 +15,7 @@ Podes tambien preguntarselo
 ## ¿Integraciones y dependencias? las siguientes:
 [**discordJS**](https://discord.js.org/)
 
-[**API-dolar-argentina**](https://github.com/Castrogiovanni20/api-dolar-argentinaI) API para obtener el precio de los diferentes tipos de cambio.
+[**API-dolar-argentina**](https://github.com/Castrogiovanni20/api-dolar-argentina) API para obtener el precio de los diferentes tipos de cambio.
 
 [**Node-cron**](https://www.npmjs.com/package/cron) Libreria para crear un job que actualice la informacion cada x tiempo. (en este caso el bot lo hace cada 1 hora).
 
